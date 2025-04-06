@@ -59,7 +59,7 @@ export const MenuItem = ({ setIsOpen, setActive, href, active, item, children })
     >
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-white hover:opacity-90 dark:text-white"
+        className="cursor-pointer text-[#0c0808] dark:text-[#0c0808] "
       >
         <Link href={href} onClick={() => setIsOpen(false)}>
           {children || item}
@@ -75,7 +75,7 @@ export const MenuItem = ({ setIsOpen, setActive, href, active, item, children })
           <motion.div
             transition={transition}
             layoutId="active"
-            className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
+            className=" backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
           >
             <motion.div layout className="w-max h-full p-4">{children}</motion.div>
           </motion.div>
@@ -90,7 +90,7 @@ export const Menu = ({ setActive, children, isOpen, setIsOpen }) => {
     <>
       {/* Desktop Navbar */}
       <nav
-        className="hidden md:flex text-2xl space-x-6 justify-center w-full text-black dark:text-white"
+        className="hidden md:flex text-2xl space-x-6 justify-center w-full "
         onMouseLeave={() => setActive(null)}
       >
         {React.Children.map(children, (child) =>
@@ -100,7 +100,7 @@ export const Menu = ({ setActive, children, isOpen, setIsOpen }) => {
 
       {/* Mobile Navbar */}
       {isOpen && (
-        <nav className="absolute top-16 left-0 w-full bg-black dark:bg-black shadow-lg text-xl border border-transparent dark:border-white/[0.9] space-y-4 p-6 md:hidden">
+        <nav className="absolute top-16 left-0 w-full bg-[#7c4ee4] dark:bg-[#7c4ee4] shadow-lg text-xl border border-transparent dark:border-white/[0.9] space-y-4 p-6 md:hidden">
           {React.Children.map(children, (child) =>
             React.cloneElement(child, { setActive, setIsOpen })
           )}
@@ -111,8 +111,8 @@ export const Menu = ({ setActive, children, isOpen, setIsOpen }) => {
 };
 
 const Logo = () => (
-  <h1 className="text-2xl font-bold text-white cursor-pointer flex justify-center">
-    LOG<span className="text-red-600">it</span>
+  <h1 className="text-2xl font-bold text-[#7c4ee4] cursor-pointer flex justify-center">
+    LOG<span className="text-[#333333]">it</span>
   </h1>
 );
 
@@ -121,25 +121,23 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="relative bg-black dark:bg-black shadow-md">
-      <div className="flex items-center justify-between p-4">
+    <header className="relative bg-white  shadow-md">
+      <div className="flex items-center justify-between p-4 ">
         <Logo />
 
         {/* Desktop & Mobile Menu */}
         <Menu setActive={setActive} isOpen={isOpen} setIsOpen={setIsOpen}>
-          <MenuItem setIsOpen={setIsOpen} active={active} item="Home" href="/" />
-          <MenuItem setIsOpen={setIsOpen} active={active} item="Blog" href="/blog" />
-          <MenuItem setIsOpen={setIsOpen} active={active} item="Categories" href="/categories" />
-          <MenuItem setIsOpen={setIsOpen} active={active} item="About" href="/about" />
-          <MenuItem setIsOpen={setIsOpen} active={active} item="Contact" href="/contact" />
-          <MenuItem setIsOpen={setIsOpen} active={active} item="Login" href="/login" />
+          <MenuItem setIsOpen={setIsOpen} active={active} item="Home" href="/"/>
+          <MenuItem setIsOpen={setIsOpen} active={active} item="Blog" href="/blog"/>
+          <MenuItem setIsOpen={setIsOpen} active={active} item="About" href="/about"/>
+          <MenuItem setIsOpen={setIsOpen} active={active} item="Contact us" href="/contact"/>
           <ThemeToggle />
         </Menu>
 
         {/* Mobile Menu Toggle Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-white text-3xl focus:outline-none"
+          className="md:hidden text-black text-3xl focus:outline-none"
         >
           {isOpen ? "✖" : "☰"}
         </button>

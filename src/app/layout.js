@@ -11,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body  className="relative">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -20,6 +20,9 @@ export default function RootLayout({ children }) {
         >
           <Navbar/>
           {children}
+          <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"> 
+        
+      </footer>
         </ThemeProvider>
       </body>
     </html>
