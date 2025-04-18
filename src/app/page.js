@@ -80,7 +80,7 @@ export default function Home() {
         <div className=" flex flex-col justify-between items-center  mx-auto p-4">
         <div className="flex justify-between items-center w-full mb-3">
         <h2 className="text-3xl font-bold">Recent Posts</h2>
-        <Link href="/categories"className="bg-[#7c4ee4] text-white px-6 py-2 rounded cursor-pointer " >View All</Link>
+        <Link href="/blog"className="bg-[#7c4ee4] text-white px-6 py-2 rounded cursor-pointer " >View All</Link>
         </div>
          <div className="post ">
           <Postcards/>
@@ -92,7 +92,7 @@ export default function Home() {
         <div className=" flex flex-col justify-between items-center  mx-auto p-4">
         <div className="flex justify-between items-center w-full mb-3">
         <h2 className="text-3xl font-bold">Popular Posts</h2>
-        <Link href="/categories"className="bg-[#7c4ee4] text-white px-6 py-2 rounded cursor-pointer " >View All</Link>
+        <Link href="/blog"className="bg-[#7c4ee4] text-white px-6 py-2 rounded cursor-pointer " >View All</Link>
         </div>
          <div className="ppost ">
           <Ppost/>
